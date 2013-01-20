@@ -7,7 +7,8 @@ var http = require('http');
 var config = require('./config.js')(app, express);
 
 var models = {};
-models.examples = require('./models/template')(app.mongoose);
+//change 'example' to whatever you named your database in config.js
+models.example = require('./models/template')(app.mongoose);
 
 require('./routes')(app, models, app.mongoose);
 

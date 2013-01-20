@@ -25,14 +25,14 @@ module.exports = function(app, express, mongoose){
    //env specific config
   app.configure('development', function(){
     app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
-
-    app.mongoose.connect('mongodb://localhost/templates');
+    //change 'example' to whatever you want to name your database
+    app.mongoose.connect('mongodb://localhost/example');
   });
 
   app.configure('production', function(){
     app.use(express.errorHandler());
-
-    app.mongoose.connect('mongodb://localhost/templates');
+    //change 'example' to whatever you want to name your database
+    app.mongoose.connect('mongodb://localhost/example');
   });
 
   return config;
